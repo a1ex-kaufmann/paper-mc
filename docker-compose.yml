@@ -4,15 +4,15 @@ services:
     image: itzg/minecraft-server
     container_name: paper
     environment:
+      VERSION: "1.20.4"
       EULA: "true"
       TYPE: PAPER
       VIEW_DISTANCE: 10
       MEMORY: 2G
-      OVERRIDE_SERVER_PROPERTIES: "true"
       ONLINE_MODE: "false"
       SERVER_NAME: "pony minecraft"
       DIFFICULTY: "hard"
-      MOTD: "privet! pony mine welcome!"
+      MOTD: "hello! pony mine welcome!"
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "true"
       PVP: "false"
       MAX_PLAYERS: 5
@@ -20,7 +20,7 @@ services:
     ports:
       - "25565:25565"
     volumes:
-      - ./data:/data:rw
+      - ./data:/data
       - ./server-icon.png:/data/server-icon.png:ro
     restart: unless-stopped
 volumes:
